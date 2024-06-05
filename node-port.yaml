@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: create
+spec:
+  type: NodePort
+  ports:
+    - port: 8081
+      targetPort: 8080
+      nodePort: 30001
+  selector:
+    app: create
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: update
+spec:
+  type: NodePort
+  ports:
+    - port: 8082
+      targetPort: 8080
+      nodePort: 30002
+  selector:
+    app: update
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: delete
+spec:
+  type: NodePort
+  ports:
+    - port: 8083
+      targetPort: 8080
+      nodePort: 30003
+  selector:
+    app: delete
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: search
+spec:
+  type: NodePort
+  ports:
+    - port: 8084
+      targetPort: 8080
+      nodePort: 30004
+  selector:
+    app: search
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adminer
+spec:
+  type: NodePort
+  ports:
+    - port: 8085
+      targetPort: 8080
+      nodePort: 30005
+  selector:
+    app: adminer
+
